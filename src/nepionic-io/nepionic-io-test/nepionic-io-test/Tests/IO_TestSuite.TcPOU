@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="IO_TestSuite" Id="{f9228358-0c01-08c2-2bd2-a91b45b007fa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK PUBLIC IO_TestSuite EXTENDS TcUnit.FB_TestSuite]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TestBasicDigitalInput();
+TestBasicDigitalOutput();]]></ST>
+    </Implementation>
+    <Method Name="TestBasicDigitalInput" Id="{f4e0d61c-a78c-0374-187f-739b46cb040a}">
+      <Declaration><![CDATA[METHOD PUBLIC TestBasicDigitalInput
+VAR
+	mockInputRegular : MockBasicDigitalInput(inverted := FALSE);
+	mockInputInverted : MockBasicDigitalInput(inverted := TRUE);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Test('TestBasicDigitalInput');
+
+mockInputRegular.MockSetRawInputFalse();
+
+AssertTrue(
+	Condition := mockInputRegular.State = FALSE,
+	Message := 'State should be FALSE when raw input is FALSE'
+);
+
+mockInputRegular.MockSetRawInputTrue();
+
+AssertTrue(
+	Condition := mockInputRegular.State = TRUE,
+	Message := 'State should be TRUE when raw input is TRUE'
+);
+
+mockInputInverted.MockSetRawInputTrue();
+
+AssertTrue(
+	Condition := mockInputInverted.State = FALSE,
+	Message := 'State should be FALSE when raw input is TRUE and inverted := TRUE'
+);
+
+mockInputInverted.MockSetRawInputFalse();
+
+AssertTrue(
+	Condition := mockInputInverted.State = TRUE,
+	Message := 'State should be TRUE when raw input is FALSE and inverted := TRUE'
+);
+
+Test_Finished();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TestBasicDigitalOutput" Id="{989c61f4-a455-03b5-21a9-53beb969be1f}">
+      <Declaration><![CDATA[METHOD PUBLIC TestBasicDigitalOutput
+VAR
+	mockOutputRegular : MockBasicDigitalOutput(inverted := FALSE);
+	mockOutputInverted : MockBasicDigitalOutput(inverted := TRUE);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Test('TestBasicDigitalInput');
+
+mockOutputRegular.State := FALSE;
+
+AssertTrue(
+	Condition := mockOutputRegular.RawOutput = FALSE,
+	Message := 'raw output should be FALSE when State is FALSE'
+);
+
+mockOutputRegular.State := TRUE;
+
+AssertTrue(
+	Condition := mockOutputRegular.RawOutput = TRUE,
+	Message := 'raw output should be TRUE when State is TRUE'
+);
+
+mockOutputInverted.State := FALSE;
+
+AssertTrue(
+	Condition := mockOutputInverted.RawOutput = TRUE,
+	Message := 'raw output should be TRUE when State is FALSE and inverted := TRUE'
+);
+
+mockOutputInverted.State := TRUE;
+
+AssertTrue(
+	Condition := mockOutputInverted.RawOutput = FALSE,
+	Message := 'raw output should be TRUE when State is FALSE and inverted := TRUE'
+);
+
+Test_Finished();]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

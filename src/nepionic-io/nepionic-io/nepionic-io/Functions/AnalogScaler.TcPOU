@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="AnalogScaler" Id="{bd8f0ae4-3515-0ad5-3888-f8451597a613}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION AnalogScaler : LREAL
+VAR_INPUT
+	input : LREAL;
+	rawLow : LREAL;
+	rawHigh : LREAL;
+	processLow : LREAL;
+	processHigh : LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[AnalogScaler := (processHigh - processLow)
+	* (input - rawLow)
+	/ (rawHigh - rawLow)
+	+ processLow;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

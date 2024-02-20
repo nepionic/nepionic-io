@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.54">
+	<Project ProjectGUID="{DB0A140C-772D-4B7E-98F2-F14BE6B6E9C4}" Target64Bit="true" ShowHideConfigurations="#x6">
+		<Plc>
+			<Project GUID="{F29974EB-E43C-43D8-B8C9-11E7BF718ACB}" Name="nepionic-io" PrjFilePath="nepionic-io\nepionic-io.plcproj" TmcFilePath="nepionic-io\nepionic-io.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e"/>
+		</Plc>
+	</Project>
+</TcSmProject>

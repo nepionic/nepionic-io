@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_Trippable" Id="{0aa1771d-7957-4c5c-9bb9-57d5f108df71}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_Trippable EXTENDS __System.IQueryInterface]]></Declaration>
+    <Property Name="IsTripped" Id="{34faf8eb-3c1b-4473-a866-c4a89a598fec}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC IsTripped : BOOL]]></Declaration>
+      <Get Name="Get" Id="{ff80d856-1e9c-4ec0-a6b6-777b2b094259}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

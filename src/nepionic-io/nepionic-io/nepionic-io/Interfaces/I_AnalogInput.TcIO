@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_AnalogInput" Id="{0d647588-6d2f-4ac5-9319-c94678430ac7}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_AnalogInput EXTENDS __System.IQueryInterface]]></Declaration>
+    <Property Name="Error" Id="{67933a15-5b39-4184-827b-503b622c5da0}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC Error : BOOL]]></Declaration>
+      <Get Name="Get" Id="{145c05f2-afa0-48dc-9ea0-095c9865ccb8}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Overrange" Id="{27c23ac9-afa6-4a18-8fc4-94288ef17998}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC Overrange : BOOL]]></Declaration>
+      <Get Name="Get" Id="{9c592616-a6df-4261-bf20-b91d1eafa48b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Underrange" Id="{9648cbc1-c6d1-47d5-9520-8874b2ff11c6}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC Underrange : BOOL]]></Declaration>
+      <Get Name="Get" Id="{ca00bfbc-a4e7-4898-8580-f4f7912a4d5c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="Value" Id="{e5783056-2274-4890-9fbf-391082c99139}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC Value : LREAL]]></Declaration>
+      <Get Name="Get" Id="{e87217d2-69e6-4be7-8b9a-5d3ebd3b377c}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

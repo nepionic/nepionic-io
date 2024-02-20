@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_DigitalOutput" Id="{283a026b-1a0b-4fd4-a19f-634c7ddd0eca}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_DigitalOutput EXTENDS __System.IQueryInterface]]></Declaration>
+    <Property Name="State" Id="{97c1f9c5-3b25-485c-8b62-5328d54a2c65}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC State : BOOL]]></Declaration>
+      <Get Name="Get" Id="{83e6df0c-b157-4066-bb8d-361ea78d1869}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{81b54612-c219-4b5c-9341-ba0ac862b065}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

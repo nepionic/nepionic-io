@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_TripResettable" Id="{40411f41-26e3-420f-958e-fe6a2434408d}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_TripResettable EXTENDS __System.IQueryInterface]]></Declaration>
+    <Method Name="TripReset" Id="{68858e7f-b233-4544-a010-c8ff6d14d1ba}">
+      <Declaration><![CDATA[METHOD TripReset : BOOL]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

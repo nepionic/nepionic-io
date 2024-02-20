@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="BasicDigitalOutput" Id="{f027e06b-59a5-4ebb-b9f8-6ec4a5c0ac66}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK PUBLIC BasicDigitalOutput IMPLEMENTS I_DigitalOutput
+VAR
+	output AT %Q* : BOOL;
+	inverted : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{c086133b-732b-412d-8b23-1d473bf6dd52}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	inverted : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.inverted := inverted;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="State" Id="{f0765697-fa40-4e8a-821d-685c010b2db3}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC State : BOOL]]></Declaration>
+      <Get Name="Get" Id="{9b741276-af2e-48a4-be51-3e3e011beff7}">
+        <Declaration><![CDATA[PUBLIC]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[State := output XOR inverted;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{7bfd0bb2-6c59-4c5f-b904-bee495afa607}">
+        <Declaration><![CDATA[PUBLIC]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[output := State XOR inverted;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

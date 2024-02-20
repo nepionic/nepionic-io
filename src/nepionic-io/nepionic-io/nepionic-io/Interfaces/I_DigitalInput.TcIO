@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_DigitalInput" Id="{69d35a15-ad9f-42c7-8c94-f4254689b712}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_DigitalInput EXTENDS __System.IQueryInterface]]></Declaration>
+    <Property Name="State" Id="{fc459746-11fa-4243-aad3-6a79c86f11a4}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC State : BOOL]]></Declaration>
+      <Get Name="Get" Id="{c96b7ce2-87b0-4bb5-b6ab-c2589e822d89}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

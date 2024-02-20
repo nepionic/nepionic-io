@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MockBasicDigitalInput" Id="{11cf0b6b-9b3e-486d-ae9d-ca79f84cd47f}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MockBasicDigitalInput EXTENDS BasicDigitalInput]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="MockSetRawInputFalse" Id="{e789ecae-a502-0ace-02ca-972502205f00}">
+      <Declaration><![CDATA[METHOD MockSetRawInputFalse : BOOL]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.input := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="MockSetRawInputTrue" Id="{219cc62b-c677-017e-204e-0279319c58cf}">
+      <Declaration><![CDATA[METHOD MockSetRawInputTrue : BOOL]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.input := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_Overloadable" Id="{cd9c2b98-e7e5-4e27-b2a1-dd23b5a7dac0}">
+    <Declaration><![CDATA[INTERFACE PUBLIC I_Overloadable EXTENDS __System.IQueryInterface]]></Declaration>
+    <Property Name="IsOverloaded" Id="{bafb21ad-ff53-410d-aa1a-9508d51b1ba6}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY PUBLIC IsOverloaded : BOOL]]></Declaration>
+      <Get Name="Get" Id="{8a21e7fb-93ed-483b-874e-09c759d85770}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

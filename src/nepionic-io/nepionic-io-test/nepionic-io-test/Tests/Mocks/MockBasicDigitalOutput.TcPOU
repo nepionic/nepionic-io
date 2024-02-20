@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MockBasicDigitalOutput" Id="{7c42756f-e353-0267-102e-a99ed9b80f93}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'linkalways'} 
+{attribute 'no_explicit_call' := 'This FB is a CLASS and must be accessed using methods or properties'}
+{attribute 'enable_dynamic_creation'}
+FUNCTION_BLOCK MockBasicDigitalOutput EXTENDS BasicDigitalOutput]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="RawOutput" Id="{9ee531e3-3da9-092d-135b-0d195c6107bf}">
+      <Declaration><![CDATA[PROPERTY RawOutput : BOOL]]></Declaration>
+      <Get Name="Get" Id="{ec00a1e5-4845-0396-2579-8a6822072375}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[RawOutput := SUPER^.output;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>
